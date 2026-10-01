@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b18"
+    >
+
+    <title>True Seller | Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="./admin.css"
+    >
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     LOGIN SCREEN
+================================= -->
+
+<section
+    id="loginScreen"
+    class="login-screen"
+>
+
+    <div class="login-glow login-glow-one"></div>
+    <div class="login-glow login-glow-two"></div>
+
+
+    <div class="login-box">
+
+   <div class="brand-logo">
+    <img
+        src="./PLPLαႦ_Lite_2026_10_01_185821.png"
+        alt="True Seller Logo"
+    >
+</div>
+
+
+        <div class="login-brand">
+            TRUE SELLER
+        </div>
+
+
+        <h1>
+            Admin Panel
+        </h1>
+
+
+        <p class="login-subtitle">
+            Sign in to manage your store.
+        </p>
+
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter admin email"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Enter password"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                id="loginBtn"
+                class="primary-button login-button"
+                type="submit"
+            >
+                Login
+            </button>
+
+
+            <p
+                id="loginError"
+                class="error-message"
+            ></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================
+     ADMIN APPLICATION
+================================= -->
+
+<section
+    id="adminApp"
+    class="admin-app"
+    style="display: none;"
+>
+
+
+    <!-- HEADER -->
+
+    <header class="admin-header">
+
+        <div class="admin-header-inner">
+
+
+            <div class="admin-brand">
+
+             <div class="brand-logo">
+    <img
+        src="./PLPLαႦ_Lite_2026_10_01_185821.png"
+        alt="True Seller Logo"
+    >
+</div>
+
+                <div>
+
+                    <strong>
+                        True Seller
+                    </strong>
+
+                    <span>
+                        Admin Panel
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-button"
+                type="button"
+            >
+                Logout
+            </button>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <!-- ================================
+             PAGE HEADING
+        ================================= -->
+
+        <section class="page-heading">
+
+            <span class="section-label">
+                STORE CONTROL
+            </span>
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <p>
+                Manage your products and customer orders from one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================================
+             DASHBOARD STATS
+        ================================= -->
+
+        <section class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📦
+                </div>
+
+                <div>
+
+                    <span class="stat-label">
+                        Total Products
+                    </span>
+
+                    <strong
+                        id="totalProducts"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <span class="stat-label">
+                        Low Stock
+                    </span>
+
+                    <strong
+                        id="lowStock"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🛒
+                </div>
+
+                <div>
+
+                    <span class="stat-label">
+                        Pending Orders
+                    </span>
+
+                    <strong
+                        id="pendingOrders"
+                        class="stat-value"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================
+             PRODUCT MANAGEMENT
+        ================================= -->
+
+        <section class="admin-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        INVENTORY
+                    </span>
+
+                    <h2>
+                        Product Management
+                    </h2>
+
+                    <p>
+                        Add, edit or remove products from your store.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT FORM -->
+
+            <div class="product-form-card">
+
+                <form id="productForm">
+
+
+                    <input
+                        id="productId"
+                        type="hidden"
+                    >
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="productName">
+                                Product Name
+                            </label>
+
+                            <input
+                                id="productName"
+                                type="text"
+                                placeholder="Enter product name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="productPrice">
+                                Price
+                            </label>
+
+                            <input
+                                id="productPrice"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                placeholder="Enter price"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="productStock">
+                                Stock
+                            </label>
+
+                            <input
+                                id="productStock"
+                                type="number"
+                                min="0"
+                                step="1"
+                                placeholder="Enter stock quantity"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="productImage">
+                                Image URL
+                            </label>
+
+                            <input
+                                id="productImage"
+                                type="url"
+                                placeholder="https://example.com/image.jpg"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="form-actions">
+
+                        <button
+                            id="productSubmitButton"
+                            class="primary-button"
+                            type="submit"
+                        >
+                            Add Product
+                        </button>
+
+
+                        <button
+                            id="cancelEditButton"
+                            class="secondary-button"
+                            type="button"
+                            style="display: none;"
+                        >
+                            Cancel Edit
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="productMessage"
+                        class="form-message"
+                    ></p>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- PRODUCT LIST -->
+
+            <div class="list-header">
+
+                <h3>
+                    Your Products
+                </h3>
+
+                <span
+                    id="adminProductCount"
+                    class="list-count"
+                >
+                    0 Products
+                </span>
+
+            </div>
+
+
+            <div
+                id="productList"
+                class="admin-product-list"
+            >
+
+                <div class="admin-empty-state">
+
+                    <div class="empty-icon">
+                        📦
+                    </div>
+
+                    <h3>
+                        No products yet
+                    </h3>
+
+                    <p>
+                        Add your first product using the form above.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================
+             ORDER MANAGEMENT
+        ================================= -->
+
+        <section class="admin-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <span class="section-label">
+                        ORDERS
+                    </span>
+
+                    <h2>
+                        Customer Orders
+                    </h2>
+
+                    <p>
+                        Review customer orders and confirm them after checking payment details.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="orderList"
+                class="order-list"
+            >
+
+                <div class="admin-empty-state">
+
+                    <div class="empty-icon">
+                        🛒
+                    </div>
+
+                    <h3>
+                        No orders yet
+                    </h3>
+
+                    <p>
+                        Customer orders will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="admin-footer">
+
+        <div>
+            <strong>
+                TRUE SELLER
+            </strong>
+
+            <span>
+                Admin Dashboard
+            </span>
+        </div>
+
+        <p>
+            Manage your store with confidence.
+        </p>
+
+    </footer>
+
+
+</section>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+================================= -->
+
+<script
+    type="module"
+    src="./admin.js"
+></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>True Seller</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a
+            href="./index.html"
+            class="brand"
+        >
+
+      <div class="brand-logo">
+    <img
+        src="./PLPLαႦ_Lite_2026_10_01_185821.png"
+        alt="True Seller Logo"
+    >
+</div>
+
+            <div class="brand-text">
+
+                <strong>
+                    True Seller
+                </strong>
+
+                <span>
+                    SHOP WITH CONFIDENCE
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="./admin.html"
+            class="admin-link"
+        >
+            Admin
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            TRUE SELLER
+        </span>
+
+        <h1>
+            Find What
+            <span>You Really Want.</span>
+        </h1>
+
+        <p>
+            Discover quality products with
+            simple ordering and reliable service.
+        </p>
+
+        <a
+            href="#products"
+            class="hero-button"
+        >
+            Explore Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PRODUCTS
+========================================= -->
+
+<main id="products">
+
+    <section class="products-section">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    OUR COLLECTION
+                </span>
+
+                <h2>
+                    Explore Products
+                </h2>
+
+            </div>
+
+
+            <span id="productCount">
+                0
+            </span>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="product-tools">
+
+            <div class="search-box">
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
+
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Search products..."
+                    autocomplete="off"
+                >
+
+
+                <button
+                    type="button"
+                    id="clearSearch"
+                    aria-label="Clear search"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div
+            id="productGrid"
+            class="product-grid"
+        ></div>
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+            id="emptyState"
+            class="empty-state"
+        >
+
+            <div class="empty-icon">
+                🛍️
+            </div>
+
+            <h3>
+                No Products Found
+            </h3>
+
+            <p>
+                We couldn't find any product here.
+            </p>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     WHATSAPP
+========================================= -->
+
+<a
+    id="whatsappBtn"
+    class="whatsapp-button"
+    target="_blank"
+    rel="noopener"
+>
+    <span>
+        WhatsApp Support
+    </span>
+</a>
+
+
+<!-- =========================================
+     ORDER MODAL
+========================================= -->
+
+<div
+    id="orderModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            type="button"
+            id="closeModal"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <span>
+                PLACE YOUR ORDER
+            </span>
+
+            <h2>
+                Complete Your Order
+            </h2>
+
+        </div>
+
+
+        <!-- PRODUCT PREVIEW -->
+
+        <div class="selected-product">
+
+            <div class="selected-image">
+
+                <img
+                    id="selectedProductImage"
+                    src=""
+                    alt="Product"
+                >
+
+            </div>
+
+
+            <div>
+
+                <h3 id="selectedProductName">
+                    Product
+                </h3>
+
+                <p>
+                    ৳<span id="selectedProductPrice">
+                        0
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER FORM -->
+
+        <form id="orderForm">
+
+
+            <input
+                type="hidden"
+                id="selectedProductId"
+            >
+
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerPhone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerAddress">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="Enter your full delivery address"
+                    rows="3"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="payment-section">
+
+                <label class="payment-title">
+                    Payment Method
+                </label>
+
+
+                <div class="payment-options">
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="COD"
+                            checked
+                        >
+
+                        <span>
+                            Cash on Delivery
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="bKash"
+                        >
+
+                        <span>
+                            bKash
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Nagad"
+                        >
+
+                        <span>
+                            Nagad
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- BKASH -->
+
+                <div
+                    id="bkashPaymentBox"
+                    class="payment-box"
+                >
+
+                    <p>
+                        Send payment to:
+                        <strong id="bkashNumber"></strong>
+                    </p>
+
+                    <input
+                        type="text"
+                        id="bkashTrxId"
+                        placeholder="Enter bKash TrxID"
+                    >
+
+                </div>
+
+
+                <!-- NAGAD -->
+
+                <div
+                    id="nagadPaymentBox"
+                    class="payment-box"
+                >
+
+                    <p>
+                        Send payment to:
+                        <strong id="nagadNumber"></strong>
+                    </p>
+
+                    <input
+                        type="text"
+                        id="nagadTrxId"
+                        placeholder="Enter Nagad TrxID"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="place-order-button"
+            >
+
+                <span>
+                    Place Order
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     SUCCESS BOX
+========================================= -->
+
+<div
+    id="successBox"
+    class="success-modal"
+>
+
+    <div class="success-content">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>
+            Order Placed!
+        </h2>
+
+        <p>
+            Your order has been received successfully.
+            We will contact you soon.
+        </p>
+
+        <button
+            type="button"
+            id="successClose"
+        >
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+    <div>
+
+        <strong>
+            True Seller
+        </strong>
+
+        <p>
+            Shop with confidence.
+        </p>
+
+    </div>
+
+
+    <p>
+        © 2026 True Seller. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script
+    type="module"
+    src="./index.js"
+></script>
+
+
+</body>
+
+</html>
